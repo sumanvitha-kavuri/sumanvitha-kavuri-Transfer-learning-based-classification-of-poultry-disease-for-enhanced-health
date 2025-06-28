@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Poultry Disease Detector</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #2a9d8f 0%, #264653 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #edf6f9;
+  }
+
+  .container {
+    background: #ffffff;
+    width: 400px;
+    padding: 40px 35px;
+    border-radius: 20px;
+    box-shadow:
+      0 15px 25px rgba(0, 0, 0, 0.2),
+      0 10px 10px rgba(42, 157, 143, 0.4);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .container:hover {
+    transform: translateY(-12px);
+    box-shadow:
+      0 30px 40px rgba(0, 0, 0, 0.3),
+      0 15px 15px rgba(42, 157, 143, 0.6);
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: #264653;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input[type="file"] {
+    width: 100%;
+    padding: 15px;
+    border: 2px dashed #2a9d8f;
+    border-radius: 12px;
+    background-color: #e0f2f1;
+    color: #264653;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin-bottom: 30px;
+  }
+  input[type="file"]:hover {
+    background-color: #b2dfdb;
+    border-color: #00796b;
+  }
+
+  input[type="submit"] {
+    background: linear-gradient(45deg, #264653, #2a9d8f);
+    color: #edf6f9;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(42, 157, 143, 0.7);
+    transition: background 0.4s ease, box-shadow 0.3s ease;
+  }
+  input[type="submit"]:hover {
+    background: linear-gradient(45deg, #2a9d8f, #264653);
+    box-shadow: 0 8px 20px rgba(42, 157, 143, 0.9);
+  }
+
+  @media (max-width: 450px) {
+    .container {
+      width: 90%;
+      padding: 30px 20px;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 14px 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>🐔 Poultry Disease Detector</h1>
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" required />
+      <input type="submit" value="Diagnose Disease" />
+    </form>
+  </div>
+</body>
+</html>
